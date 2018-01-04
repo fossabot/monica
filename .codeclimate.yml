@@ -1,0 +1,10 @@
+exclude_patterns:
+- "public/js/app.js"
+- "bootstrap/cache"
+- "public/storage"
+- "database/"
+- "docker/"
+- "storage/"
+- "**/tests/"
+- "**/node_modules/"
+- "**/vendor/"

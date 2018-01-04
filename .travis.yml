@@ -3,10 +3,17 @@ language: php
 php:
   - 7.1
 
+env:
+  global:
+    - CC_TEST_REPORTER_ID=f14ac7fd855c37540837bc66b70bf2c4915404a4fc55a31c269813afd45b8822
+
 services:
   - mysql
 
 before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
   - cp .env.travis .env
   - mysql -e 'create database monica;'
   - composer self-update
@@ -15,4 +22,7 @@ before_script:
 script:
   - php artisan migrate --env=testing --no-interaction -vvv
   - php artisan db:seed --env=testing --no-interaction -vvv
-  - vendor/bin/phpunit
+  - vendor/bin/phpunit --log-junit junit.xml --coverage-clover clover.xml
+
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
