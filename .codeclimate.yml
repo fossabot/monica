@@ -1,3 +1,41 @@
+version: "2"
+checks:
+  argument-count:
+    config:
+      threshold: 10
+  complex-logic:
+    config:
+      threshold: 4
+  file-lines:
+    enabled: false
+  method-complexity:
+    config:
+      threshold: 15
+  method-count:
+    enabled: false
+  method-lines:
+    config:
+      threshold: 25
+  nested-control-flow:
+    config:
+      threshold: 4
+  return-statements:
+    config:
+      threshold: 4
+  similar-code:
+    enabled: false
+  identical-code:
+    enabled: false
+plugins:
+  phpcodesniffer:
+    enabled: true
+  phpmd:
+    enabled: true
+  sonar-php:
+    enabled: true
+    config:
+      tests_patterns:
+        - tests/**
 exclude_patterns:
 - "public/js/app.js"
 - "bootstrap/cache"
