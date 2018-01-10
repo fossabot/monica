@@ -8,6 +8,7 @@ use Illuminate\Session\Store;
 use App\Http\Requests\Request;
 use Illuminate\Session\NullSessionHandler;
 use PragmaRX\Google2FALaravel\Support\Authenticator;
+use PragmaRX\Google2FALaravel\Support\AuthenticatorController;
 
 class Google2FATest extends TestCase
 {
@@ -70,13 +71,14 @@ class Google2FATest extends TestCase
         $request->getSession()->start();
 
         $authenticator = new Authenticator($request);
+        $authenticatorController = new AuthenticatorController($request);
 
-        $this->assertEquals(false, $authenticator->canPassWithoutCheckingOTP());
+        $this->assertEquals(false, $authenticatorController->isAuthenticated());
 
         $this->assertEquals(true, $authenticator->isActivated());
 
         $authenticator->login();
 
-        $this->assertEquals(true, $authenticator->canPassWithoutCheckingOTP());
+        $this->assertEquals(true, $authenticatorController->isAuthenticated());
     }
 }
