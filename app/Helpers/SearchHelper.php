@@ -2,7 +2,6 @@
 
 namespace App\Helpers;
 
-use Auth;
 use App\Models\Contact\Contact;
 use App\Models\Contact\ContactFieldType;
 

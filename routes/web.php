@@ -310,3 +310,9 @@ Route::middleware(['auth', 'auth.confirm', 'u2f', '2fa'])->group(function () {
         });
     });
 });
+
+Route::middleware(['admin', 'auth.confirm', 'u2f', '2fa'])->group(function () {
+    Route::name('admin.')->group(function () {
+        Route::get('/admin', 'Admin\\AdminController@index')->name('index');
+    });
+});

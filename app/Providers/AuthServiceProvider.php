@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Laravel\Passport\Passport;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Contracts\Auth\Access\Gate as GateContract;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
@@ -29,5 +30,14 @@ class AuthServiceProvider extends ServiceProvider
 
         //
         Passport::routes();
+
+        /*
+        Auth::extend('admin', function () {
+            $auth = Auth::guard('web');
+            if ($auth->check() && $auth->user()->admin) {
+                return $auth;
+            }
+        });
+        */
     }
 }
