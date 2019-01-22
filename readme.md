@@ -9,6 +9,7 @@
 <a href="https://sonarcloud.io/dashboard?id=monica"><img src="https://sonarcloud.io/api/project_badges/measure?project=monica&amp;metric=alert_status" alt="Quality gate" /></a>
 <a href="https://github.com/djaiss/monica/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-AGPL-blue.svg" alt="License"></a>
 <a class="badge-align" href="https://slack.monicahq.com"><img src="https://slack.monicahq.com/badge.svg"></a>
+<a href="https://app.fossa.io/projects/git%2Bgithub.com%2Fasbiin%2Fmonica?ref=badge_shield" alt="FOSSA Status"><img src="https://app.fossa.io/api/projects/git%2Bgithub.com%2Fasbiin%2Fmonica.svg?type=shield"/></a>
 </p>
 
 Monica is a great open source personal relationship management system.
@@ -244,3 +245,6 @@ Monica use a lot of open source projects and we thank them with all our hearts. 
 Copyright (c) 2016-2018
 
 Licensed under the AGPL License. [View license](/LICENSE).
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fasbiin%2Fmonica.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fasbiin%2Fmonica?ref=badge_large)
